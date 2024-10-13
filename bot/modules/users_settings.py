@@ -61,6 +61,8 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
     if key is None:
         buttons.callback("Universal", f"userset {user_id} universal")
         buttons.callback("Mirror", f"userset {user_id} mirror")
+        buttons.callback("Metadata", f"userset {user_id} metadata")
+        metadata = user_dict.get("metadata", "Not Exists")
         buttons.callback("Leech", f"userset {user_id} leech")
         if user_dict and any(
             key in user_dict
@@ -103,7 +105,7 @@ async def get_user_settings(from_user, key=None, edit_type=None, edit_mode=None)
 
         buttons.callback("Metadata", f"userset {user_id} metadata")
         metadata = user_dict.get("metadata", "Not Exists")
-
+        
         buttons.callback("Attachment", f"userset {user_id} attachment")
         attachment = user_dict.get("attachment", "Not Exists")
 
